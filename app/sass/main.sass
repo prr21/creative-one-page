@@ -1,0 +1,443 @@
+// Fonts
+@font-face
+  font-family: Proxima Nova A
+  src: url("../fonts/Proxima Nova A.otf") format("opentype")
+
+// Variable
+$main-tc: #505050 					// basic text-color
+$main-bg: #ffe400						// baisc background color
+$main-fm: "Proxima Nova A"  // basic font
+$reg-fw: 400								// font-weight at regular text
+$reg-lh: 24px								// font-height at regular text
+$head-fw: 700								// font-weight at header text
+$head-lh: 30px							// font-height at header text
+
+// default params
+*
+	font-family: $main-fm
+	margin: 0px
+	box-sizing: border-box
+a
+	color: inherit
+	text-decoration: none
+
+body
+	padding: 0 35px
+
+//general classes
+.v-offset
+	margin-bottom: 120px
+
+.pos-rel
+	position: relative
+
+.grid
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+
+.center-col
+	display: flex
+	justify-content: center
+	align-items: center
+	margin-top: 3%
+
+// gid titles
+.gid-title
+	font-size: 14px
+	font-weight: 400
+	line-height: 30px
+	text-transform: uppercase
+	color: $main-tc
+	.title-dash
+	    letter-spacing: -1px
+	    margin-right: 5px
+
+.title-column
+	display: flex
+	flex-direction: column
+
+.head-text
+	color: $main-tc
+	font-weight: $head-fw
+	line-height: $head-lh
+
+.reg-text
+	color: $main-tc
+	font-weight: $reg-fw
+	line-height: $reg-lh
+
+
+// Button setting
+.btn-box
+	width: 131px
+	height: 47px
+	position: relative
+.btn
+  width: 65%
+  height: 100%
+  background-color: $main-bg
+  line-height: 47px
+  transition: .2s
+  &.btn-fill
+	  cursor: pointer
+	  &:hover
+	  	width: 100%
+  .btn-offset
+    width: 100%
+    position: absolute
+    text-align: center
+
+.btn-text
+	color: $main-tc
+	font-size: 14px
+	font-weight: 700
+	text-transform: uppercase
+.section-header
+	display: flex
+	justify-content: center
+	flex-direction: column
+	align-items: center
+	margin-bottom: 50px
+	&__title
+		margin-bottom: 30px
+		font-size: 30px
+	&__description
+		font-size: 16px
+
+// Header
+.header
+	position: fixed
+	width: 100%
+	left: 0
+	top: 0
+	z-index: 6
+	padding: 0 10px
+	transition: .3s
+	&__logo
+		font-size: 26px
+		font-weight: $head-fw
+		line-height: $head-lh
+		text-transform: uppercase
+	.header-content
+		display: flex
+		position: relative
+		justify-content: space-between
+		align-items: center
+		max-width: 1340px
+		margin: 0 auto
+		padding: 10px 0
+	.header-menu
+		height: 100%
+		position: absolute
+		top: 0
+		left: 7%
+		z-index: 6
+		.menu-list
+			background-color: white
+			height: 100%
+			display: flex
+			align-items: center
+			list-style: none
+			padding: 0
+			opacity: 0
+			transition: .3s
+			pointer-events: none
+			transform: translateY(-15px)
+			.list
+				cursor: pointer
+				padding: 0 14px
+				font-size: 14px
+				font-weight: $reg-fw
+				line-height: $head-lh
+				text-transform: uppercase
+				opacity: .6
+				&:hover
+					opacity: 1
+	.burger-menu
+		cursor: pointer
+		z-index: 10
+
+// Aside
+.aside
+  height: 90%
+  background-color: white
+  padding: 5px
+  top: -15%
+  left: 0
+  width: 90px
+  position: fixed
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: flex-end
+  z-index: 5
+  opacity: 0
+  pointer-events: none
+  transition: .3s
+  transform: translateX(-15px)
+  .ver-text
+  	user-select: none
+  	font-size: 14px
+  	margin: auto -30px
+  	text-transform: uppercase
+  	transform: rotate(270deg)
+  	opacity: .3
+  	transition: .2s
+  	cursor: pointer
+  	&:hover
+  		opacity: 1
+		.social-links
+			display: flex
+			flex-direction: column
+			list-style: none
+			.link
+				padding-top: 10px
+				&:hover
+					svg
+						opacity: 1
+// Main section
+.main-section
+	margin-top: 50px
+	position: relative
+	.section-content
+		display: flex
+		justify-content: center
+		align-items: center
+		&:before
+			content: ''
+			position: absolute
+			width: 73.2%
+			height: 100%
+			right: 25px
+			top: 0
+			z-index: -1
+			background-color: #f4f4f4
+		.section-info
+			display: flex
+			flex-direction: column
+		.main-img-title
+			margin: 29px 0 37px
+			img
+				width: 100%
+		.main-img
+			img
+				width: 100%
+
+// Servieces section
+.services-gallery-section
+.services-section
+	.grid
+		justify-content: flex-start
+	.servies
+		&__item
+			display: flex
+			max-width: 300px
+			margin: 30px 35px 0
+			&-img
+				display: flex
+				margin-right: 10px
+			&-info
+				margin-left: 12px
+				.servies__item-title
+					font-size: 16px
+					margin: 0px
+					text-transform: uppercase
+				.servies__item-description
+					font-size: 14px
+					margin: 0
+
+// Gallery section
+	// Navigation menu gallery
+.gallery-menu
+	user-select: none
+	padding-left: 0px
+	list-style: none
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	text-transform: uppercase
+	font-weight: $head-fw
+	line-height: $reg-lh
+	color: $main-tc
+	margin-bottom: 30px
+	&__list
+		margin-left: 12px
+		margin-right: 12px
+		padding: 0 12px 20px 12px
+		cursor: pointer
+		position: relative
+		&:before
+		    content: ''
+		    height: 2px
+		    width: 0%
+		    position: absolute
+		    bottom: 0px
+		    left: 10%
+		    background-color: #ffe400
+		    transition: all .2s ease
+		&:hover:before
+		    width: 80%
+
+.gallery
+	&.grid
+		justify-content: space-evenly
+	&__item
+		width: 350px
+		height: 350px
+		margin-top: 15px
+		position: relative
+		text-align: center
+		&:hover
+			.gallery__item-info
+				box-shadow: 0 0 40px rgba(0, 0, 0, 0.2)
+				opacity: 0.9
+				background-color: #ffe619
+		&-info
+			width: 100%
+			height: 100%
+			transition: .6s
+			padding: 35px 25px
+			opacity: 0
+			.btn-text
+				position: absolute
+				bottom: 0
+				padding: 50px 27px
+				left: 0
+				&:hover
+					cursor: pointer
+					opacity: .55
+		&-title
+			text-transform: uppercase
+			font-size: 18px
+			margin-bottom: 11.7%
+	&-wallpaper
+		position: absolute
+		height: 100%
+		display: flex
+		top: 0
+		left: 0
+		z-index: -2
+		img
+			width: 100%
+
+// Skills section
+.skills-section
+	display: flex
+	.img-wrap
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 570px
+		img
+			width: 120%
+	.section-content
+		max-width: 580px
+		width: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		margin-right: 80px
+		.section-header
+			align-items: start
+	.section-header__title
+		margin-top: 30px
+	.skills
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+	.skill-item
+		margin-right: 50px
+		&__title
+			margin-bottom: 20px
+			font-size: 18px
+		.btn-text
+			font-size: 36px
+
+// Team section
+.team-section
+	.team
+		justify-content: space-evenly
+	.phone
+		font-size: 14px
+	.item-info
+		&__bio
+			margin-bottom: 12px
+			.name
+				color: $main-tc
+				font-size: 16px
+				font-weight: bold
+				text-transform: uppercase
+				margin-bottom: 5px
+			.job-position
+				font-size: 12px
+				font-weight: bold
+				text-transform: uppercase
+				opacity: 0.8
+				color: $main-tc
+	.item-img
+		img
+			width: 100%
+
+// form section
+.form-subscribe-wrap
+	.form-subscribe
+		color: $main-tc
+		width: 100%
+		height: 157px
+		display: flex
+		justify-content: space-around
+		align-items: center
+		background-color: #f4f4f4
+	.form-info
+		display: flex
+		flex-direction: column
+		align-items: center
+		.form-title
+	    font-size: 28px
+	    font-weight: 400
+		.form-description
+			font-size: 14px
+			font-weight: 400
+	.form
+		display: flex
+		max-width: 445px
+		width: 100%
+		height: 42px
+		&-input
+			width: 100%
+			border: 1px solid #ededed
+			background-color: #ffffff
+			font-size: 12px
+			font-weight: 400
+			opacity: 0.4
+			color: $main-tc
+			&__inp
+				height: 100%
+				text-transform: uppercase
+				width: 100%
+				padding-left: 10%
+		.btn-box
+			height: 42px
+			.btn-text
+				line-height: 0
+				width: 100%
+				border: none
+
+//Fotter
+.footer
+	margin: 50px 0 38px
+	font-size: 14px
+	font-weight: 400
+	.link
+		margin-left: 10px
+		transition: .2s
+		&:hover
+			font-weight: $head-fw
+
+@import media
+@import animation
