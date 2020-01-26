@@ -147,79 +147,19 @@
 					<div class="center-col">
 						<nav>
 							<ul class="gallery-menu">
-								<li class="gallery-menu__list">all</li>
-								<li class="gallery-menu__list">photoshop</li>
-								<li class="gallery-menu__list">illustrator</li>
-								<li class="gallery-menu__list">Brand</li>
-								<li class="gallery-menu__list">mockup</li>
+								<li id="album-1" class="gallery-menu__list active">photoshop</li>
+								<li id="album-2" class="gallery-menu__list">illustrator</li>
+								<li id="album-3" class="gallery-menu__list">Brand</li>
+								<li id="album-4" class="gallery-menu__list">mockup</li>
 							</ul>
 						</nav>
 					</div>
-					<div class="gallery grid">
-						<div class="gallery__item">
-							<div class="gallery-wallpaper">
-								<img src="img/replace_image1.jpg" alt="img">
-							</div>
-							<div class="gallery__item-info">
-								<h4 class="gallery__item-title head-text title-column"><span>+300 Free mockups collection </span><span>laptop and phone</span></h4>
-								<p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-								<span class="btn-text">Read more</span>
-							</div>
-						</div>
-						<div class="gallery__item">
-							<div class="gallery-wallpaper">
-								<img src="img/replace_image1.jpg" alt="img">
-							</div>						
-							<div class="gallery__item-info">
-								<h4 class="gallery__item-title head-text title-column"><span>+300 Free mockups collection </span><span>laptop and phone</span></h4>
-								<p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-								<span class="btn-text">Read more</span>
-							</div>
-						</div>
-						<div class="gallery__item">
-							<div class="gallery-wallpaper">
-								<img src="img/replace_image2.jpg" alt="img">
-							</div>						
-							<div class="gallery__item-info">
-								<h4 class="gallery__item-title head-text title-column"><span>+300 Free mockups collection </span><span>laptop and phone</span></h4>
-								<p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-								<span class="btn-text">Read more</span>
-							</div>
-						</div>
-						<div class="gallery__item">
-							<div class="gallery-wallpaper">
-								<img src="img/replace_image3.jpg" alt="img">
-							</div>						
-							<div class="gallery__item-info">
-								<h4 class="gallery__item-title head-text title-column"><span>+300 Free mockups collection </span><span>laptop and phone</span></h4>
-								<p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-								<span class="btn-text">Read more</span>
-							</div>
-						</div>
-						<div class="gallery__item">
-							<div class="gallery-wallpaper">
-								<img src="img/replace_image4.jpg" alt="img">
-							</div>						
-							<div class="gallery__item-info">
-								<h4 class="gallery__item-title head-text">+300 Free mockups collection <br> laptop and phone</h4>
-								<p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-								<span class="btn-text">Read more</span>
-							</div>
-						</div>
-						<div class="gallery__item">
-							<div class="gallery-wallpaper">
-								<img src="img/replace_image5.jpg" alt="img">
-							</div>						
-							<div class="gallery__item-info">
-								<h4 class="gallery__item-title head-text title-column"><span>+300 Free mockups collection </span><span>laptop and phone</span></h4>
-								<p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-								<span class="btn-text">Read more</span>
-							</div>
-						</div>
-					</div>
+					<div class="gallery grid album-1 active"></div>
+					<div class="gallery grid album-2"></div>
+					<div class="gallery grid album-3"></div>
+					<div class="gallery grid album-4"></div>
 					<div class="center-col">
-						<div class="btn-box">
+						<div id="show-more" class="btn-box">
 							<div class="btn btn-text btn-fill">
 								<span class="btn-offset">see more work</span>
 							</div>
@@ -360,5 +300,6 @@
 		</footer>
 	</div>
 	<script src="js/index.js"></script>
+	<script src="js/showAlbum.js"></script>
 </body>
 </html>
