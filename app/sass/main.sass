@@ -5,7 +5,7 @@
 
 // Variable
 $main-tc: #505050 					// basic text-color
-$main-bg: #ffe400						// baisc background color
+$accent-tc: #ffe400						// baisc background color
 $main-fm: "Proxima Nova A"  // basic font
 $reg-fw: 400								// font-weight at regular text
 $reg-lh: 24px								// font-height at regular text
@@ -77,7 +77,7 @@ body
 .btn
   width: 65%
   height: 100%
-  background-color: $main-bg
+  background-color: $accent-tc
   line-height: 47px
   transition: .2s
   &.btn-fill
@@ -205,12 +205,13 @@ body
 		display: flex
 		justify-content: center
 		align-items: center
+		height: 680px
 		&:before
 			content: ''
 			position: absolute
-			width: 73.2%
+			width: 85%
 			height: 100%
-			right: 25px
+			right: -20px
 			top: 0
 			z-index: -1
 			background-color: #f4f4f4
@@ -262,28 +263,40 @@ body
 	line-height: $reg-lh
 	color: $main-tc
 	margin-bottom: 30px
+	&__list.active
+		opacity: 1
+		cursor: auto
+		&:before
+			width: 80%
 	&__list
+		opacity: .75
 		margin-left: 12px
 		margin-right: 12px
 		padding: 0 12px 20px 12px
 		cursor: pointer
 		position: relative
 		&:before
-		    content: ''
-		    height: 2px
-		    width: 0%
-		    position: absolute
-		    bottom: 0px
-		    left: 10%
-		    background-color: #ffe400
-		    transition: all .2s ease
+			content: ''
+			height: 2px
+			width: 0%
+			position: absolute
+			bottom: 0px
+			left: 10%
+			background-color: $accent-tc
+			transition: all .2s ease
 		&:hover:before
 		    width: 80%
 
+.gallery.active
+	display: flex
 .gallery
+	display: none
 	&.grid
 		justify-content: space-evenly
 	&__item
+		display: flex
+		justify-content: center
+		align-items: center
 		width: 350px
 		height: 350px
 		margin-top: 15px
