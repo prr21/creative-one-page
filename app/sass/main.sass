@@ -4,12 +4,12 @@
   src: url("../fonts/Proxima Nova A.otf") format("opentype")
 
 // Variable
-$main-tc: #505050 					// basic text-color
-$accent-tc: #ffe400						// baisc background color
-$main-fm: "Proxima Nova A"  // basic font
-$reg-fw: 400								// font-weight at regular text
-$reg-lh: 24px								// font-height at regular text
-$head-fw: 700								// font-weight at header text
+$main-tc: #505050 						// basic text-color
+$accent-tc: #ffe400						// secondary color
+$main-fm: "Proxima Nova A"  			// basic font
+$reg-fw: 400							// font-weight at regular text
+$reg-lh: 24px							// font-height at regular text
+$head-fw: 700							// font-weight at header text
 $head-lh: 30px							// font-height at header text
 
 // default params
@@ -306,13 +306,19 @@ body
 			.gallery__item-info
 				box-shadow: 0 0 40px rgba(0, 0, 0, 0.2)
 				opacity: 0.9
+				filter: blur(0)
+				top: 0
 				background-color: #ffe619
 		&-info
+			position: absolute
 			width: 100%
 			height: 100%
-			transition: .6s
+			top: -25px
+			left: 0
 			padding: 35px 25px
 			opacity: 0
+			transition: .4s
+			filter: blur(4px)
 			.btn-text
 				position: absolute
 				bottom: 0
