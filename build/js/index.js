@@ -49,6 +49,6 @@ function toggleGallery(e) {
 }
 
 function showMorePhotos(){
-	maxLengthPhotos =+ 50;
+	maxLengthPhotos =+ 3;
 	showAlbum(albumId, maxLengthPhotos)
 }

@@ -31,19 +31,17 @@ const showAlbum = (albumId, countPhotos = 6) => {
 
 			if (!newItem[0]) return;
 
-			const { thumbnailUrl, title, id } = newItem[0];
+			const { url, title, id } = newItem[0];
 
 			item.innerHTML = `
-				<div class="gallery__item">
-					<div class="gallery-wallpaper">
-						<img style="width:350px" src="${thumbnailUrl}" alt="${title} img">
-					</div>						
-					<div class="gallery__item-info">
-						<h4 class="gallery__item-title head-text title-column"><span>№${id} Free mockups collection </span><span>laptop and phone</span></h4>
-						<p class="reg-text">Lorem sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis; <br>${title};</p>
-						<span class="btn-text">Read more</span>
-					</div>
-				</div>`;
+				<div class="gallery-wallpaper">
+					<img src="${url}" alt="${title} img">
+				</div>						
+				<div class="gallery__item-info">
+					<h4 class="gallery__item-title head-text title-column"><span>№${id} Free mockups collection </span><span>laptop and phone</span></h4>
+					<p class="reg-text">${title.repeat(4)};</p>
+					<span class="btn-text">Read more</span>
+				</div>;`
 		}
 	}
 
@@ -61,21 +59,3 @@ const showAlbum = (albumId, countPhotos = 6) => {
 		return json
 	}
 }
-
-
-
-						
-/*						<div class="gallery__item">
-							<div class="gallery-wallpaper">
-								<img src="img/replace_image5.jpg" alt="img">
-							</div>						
-							<div class="gallery__item-info">
-								<h4 class="gallery__item-title head-text title-column"><span>+300 Free mockups collection </span><span>laptop and phone</span></h4>
-								<p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-								<span class="btn-text">Read more</span>
-							</div>
-						</div>	*/
-
-/*<div class="gallery__item">
-	<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-</div>*/
