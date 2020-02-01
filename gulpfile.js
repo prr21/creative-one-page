@@ -7,6 +7,9 @@ const htmlmin = require('gulp-htmlmin');
 const browserSync = require('browser-sync').create();
 const livereload = require('gulp-livereload');
 const minify = require('gulp-minify');
+const autoprefixer = require('gulp-autoprefixer');
+const concatCss = require('gulp-concat-css');
+const concat = require('gulp-concat');
 
 function html() {
   return src('app/*.html')
@@ -18,12 +21,15 @@ function html() {
 function css() {
   return src('app/sass/*.sass')
     .pipe(sass())
+    .pipe(concatCss('style.css'))
+    .pipe(autoprefixer({cascade: false}))
     .pipe(minifyCSS())
-    .pipe(dest('build/css'));
-}
+    .pipe(dest('build/css'))
+  }
 
 function js() {
   return src('app/js/*.js')
+    .pipe(concat('index.js'))
     .pipe(minify())
     .pipe(dest('build/js'))
 }
