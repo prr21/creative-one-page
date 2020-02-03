@@ -8,6 +8,7 @@ const showMore = document.querySelector('#show-more');
 //default params
 let menuIsOpened = false;
 let maxLengthPhotos = 6;
+let itemIsLoading = true;
 let albumId = 'album-1';
 
 const cacheGallery = {};
@@ -49,6 +50,7 @@ function toggleGallery(e) {
 }
 
 function showMorePhotos(){
+	if (itemIsLoading) return
 	maxLengthPhotos =+ 3;
 	showAlbum(albumId, maxLengthPhotos)
 }

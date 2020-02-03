@@ -8,6 +8,7 @@ const showMore = document.querySelector('#show-more');
 //default params
 let menuIsOpened = false;
 let maxLengthPhotos = 6;
+let itemIsLoading = true;
 let albumId = 'album-1';
 
 const cacheGallery = {};
@@ -49,6 +50,7 @@ function toggleGallery(e) {
 }
 
 function showMorePhotos(){
+	if (itemIsLoading) return
 	maxLengthPhotos =+ 3;
 	showAlbum(albumId, maxLengthPhotos)
 }
@@ -78,12 +80,15 @@ const showAlbum = (albumId, countPhotos = 6) => {
 			let item = document.createElement('div');
 			item.className = 'gallery__item';
 			item.innerHTML = spinner;
+			itemIsLoading = true
 
 			gallery.appendChild(item);
 
 			const newItem = await getPhoto(albumId, photoId);
-
-			if (!newItem[0]) return;
+			if (!newItem[0]) {
+				itemIsLoading = false;
+				return displayError(newItem, item)
+			}
 
 			const { url, title, id } = newItem[0];
 
@@ -97,16 +102,31 @@ const showAlbum = (albumId, countPhotos = 6) => {
 					<span class="btn-text">Read more</span>
 				</div>;`
 		}
+		itemIsLoading = false
+	}
+
+	function displayError(error, item) {
+		item.innerHTML = `
+		<div class="gallery__item-error">
+			<div><h4>Произошла ошибка!</h4></div>
+			<div>${error}</div>
+		<div>`
+
+		item.style.border = '1px solid #ff634736'
 	}
 
 	// Reqest photo with fetch
 	async function getPhoto(albumId, photoId) {
-		// if (cacheGallery[id]) return cacheGallery[id];
 		let url = `https://jsonplaceholder.typicode.com/photos?albumId=${albumId}&id=${photoId}`;
-		let response = await fetch(url);
+		let response;
 
-		if (!response.ok) {
-			throw new Error(`Cannot find url ${response.url}! Code ${response.status}`)
+		try {
+			response = await fetch(url);
+			if (!response.ok) {
+				throw new Error(`Невозможно найти путь ${response.url}! <br> Код ошибки: ${response.status}`)
+			}
+		} catch(e) {
+			return e
 		}
 
 		let json = await response.json();
