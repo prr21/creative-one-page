@@ -39,12 +39,12 @@ const showAlbum = (albumId, countPhotos = 6) => {
 			item.innerHTML = `
 				<div class="gallery-wallpaper">
 					<img src="${url}" alt="${title} img">
-				</div>						
+				</div>		
 				<div class="gallery__item-info">
 					<h4 class="gallery__item-title head-text title-column"><span>№${id} Free mockups collection </span><span>laptop and phone</span></h4>
-					<p class="reg-text">${title.repeat(4)};</p>
+					<p class="reg-text">${title.repeat(4)}</p>
 					<span class="btn-text">Read more</span>
-				</div>;`
+				</div>`
 		}
 		itemIsLoading = false
 	}

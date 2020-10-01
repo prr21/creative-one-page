@@ -50,9 +50,7 @@ function reload(done){
 }
 
 watch( 'app/sass/*.sass', series(css, reload) );
-
 watch( 'app/*.html', series(html, reload) );
-
 watch( 'app/js/*.js', series(js, reload) );
 
 exports.css = css;

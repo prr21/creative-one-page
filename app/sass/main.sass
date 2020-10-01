@@ -26,7 +26,7 @@ body
 
 //general classes
 .v-offset
-	margin-bottom: 120px
+	padding-top: 120px
 
 .pos-rel
 	position: relative
@@ -307,6 +307,7 @@ body
 				box-shadow: 0 0 40px rgba(0, 0, 0, 0.2)
 				opacity: 0.9
 				filter: blur(0)
+				pointer-events: all
 				top: 0
 				background-color: #ffe619
 		&-info
@@ -314,9 +315,9 @@ body
 			width: 100%
 			height: 100%
 			top: -25px
-			left: 0
 			padding: 35px 25px
 			opacity: 0
+			pointer-events: none
 			transition: .4s
 			filter: blur(4px)
 			.btn-text
